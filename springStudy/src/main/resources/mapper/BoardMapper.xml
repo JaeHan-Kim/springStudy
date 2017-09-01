@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Board">
+	<select id="selectBoardList" parameterType="Board" resultType="Board">
+		<!-- 
+		SELECT * FROM BOARD ORDER BY BOARD_NO DESC
+		 -->
+		select * 
+		from
+		(
+			select 
+				T.*, 
+				FLOOR((ROWNUM - 1) / #{listSize} + 1) AS PAGE,
+				count(*)over() as TOTCNT
+			from
+			(
+				select * 
+				from board order by BOARD_NO desc
+			)T
+		)T
+		where T.page = #{page}
+	</select>
+	
+	<insert id="insertBoard" parameterType="Board" >
+		INSERT INTO BOARD (
+			BOARD_NO,
+			TITLE,
+			CONTENT,
+			REG_NO,
+			VIEWS,
+			REG_DT,
+			MOD_DT
+		) VALUES (
+			SEQ_TB_BOARD_IDX.NEXTVAL,
+			#{title},
+			#{content},
+			#{regNo},
+			0,
+			#{regDt},
+			#{modDt}
+		)
+	</insert>
+	
+	<select id="detailBoard" parameterType="Board" resultType="Board">
+		SELECT *
+		FROM BOARD 
+		WHERE BOARD_NO = #{boardNo}
+	</select>
+	
+	<delete id="deleteBoard" parameterType="Board">
+		DELETE
+		FROM BOARD
+		WHERE BOARD_NO = #{boardNo}
+	</delete>
+	
+	<update id="updateBoard" parameterType="Board">
+		UPDATE BOARD
+		SET	   TITLE = #{title},
+			   CONTENT = #{content},
+			   REG_DT = #{regDt}
+		WHERE  BOARD_NO = #{boardNo}
+	</update>
+</mapper>
