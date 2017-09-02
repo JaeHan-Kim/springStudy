@@ -11,5 +11,7 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+
+<img src="http://localhost:8083/resources/img/20170902_100411871.jpg"/>
 </body>
 </html>
