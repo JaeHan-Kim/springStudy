@@ -46,8 +46,8 @@ public class JoinController extends BaseController {
 	@LoginCheck
 	@RequestMapping(value="/join/loginComplete", method = RequestMethod.GET)
 	public ModelAndView loginComplete(ModelMap model , HttpServletRequest request) {
-		Users user = (Users) this.getCurrUser();
-		logger.debug("email {}, pw {}", user.getEmail(), user.getPw());
+		Users user = (Users) super.getCurrUser();
+		logger.info("email {}, pw {}", user.getEmail(), user.getPw());
 		return  new ModelAndView("/join/loginComplete");
 	}
 	
