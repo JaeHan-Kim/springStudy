@@ -1,6 +1,10 @@
 package com.spring.study.model;
 
-public class BaseModel {
+import java.io.Serializable;
+
+
+@SuppressWarnings("serial")
+public class BaseModel implements Serializable {
 	private int page = 1;
 	private int totCnt = -1;
 	private int listSize = 10;

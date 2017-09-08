@@ -15,3 +15,17 @@ START WITH 1
 INCREMENT BY 1
 NOCACHE
 NOCYCLE;
+
+-- 회원
+CREATE TABLE USERS (
+   EMAIL VARCHAR2(30),
+   PW VARCHAR2(30)
+ );
+-- 회원 정보
+  INSERT INTO USERS (
+			EMAIL,
+			PW
+		) VALUES (
+			'hgal8877@gmail.com',
+            '1111'
+		);

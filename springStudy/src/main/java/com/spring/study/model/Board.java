@@ -1,5 +1,6 @@
 package com.spring.study.model;
 
+@SuppressWarnings("serial")
 public class Board extends BaseModel {
 	int boardNo;
 	String title;

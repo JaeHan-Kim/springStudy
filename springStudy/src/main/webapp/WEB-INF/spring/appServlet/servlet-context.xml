@@ -28,6 +28,14 @@
 	
 	<context:component-scan base-package="com.spring.study" />
 	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.spring.study.interceptor.BaseInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
+	<bean id="exceptionResolver" class="com.spring.study.resolver.ExceptionResolver" p:defaultErrorView="exception/baseException">
+	</bean>	
 	
 </beans>
