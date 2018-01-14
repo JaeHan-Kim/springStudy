@@ -38,7 +38,14 @@
 			<artifactId>spring-oxm</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-				
+		
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+
+
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -146,7 +153,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.7</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		
@@ -161,6 +168,7 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>4.3.3.RELEASE</version>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc14</artifactId>
@@ -168,6 +176,14 @@
 			<scope>system</scope>
 			<systemPath>${webcontent-dir}/ojdbc14.jar</systemPath>
 		</dependency>
+		 -->
+		 <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+    			<groupId>mysql</groupId>
+    			<artifactId>mysql-connector-java</artifactId>
+   			<version>6.0.6</version>
+		</dependency>
+		 
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>

@@ -40,12 +40,12 @@ public class BoardController extends BaseController {
 	public String home(Locale locale, Model model, Board board) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		List<Board> boards = boardService.getBoardList(board);
+		// List<Board> boards = boardService.getBoardList(board);
 		
-		logger.info("{}", boards.size());
-		for (Board boarda : boards) {
-			logger.debug("{}", boarda.getContent());
-		}
+		//logger.info("{}", boards.size());
+		//for (Board boarda : boards) {
+		//	logger.debug("{}", boarda.getContent());
+		//}
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
